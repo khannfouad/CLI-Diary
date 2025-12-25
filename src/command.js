@@ -2,7 +2,13 @@
 
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { newNote, getAllNotes, findNotes } from "./notes.js";
+import {
+  newNote,
+  getAllNotes,
+  findNotes,
+  removeNote,
+  removeAllNotes,
+} from "./notes.js";
 import { consolePretty } from "./utils.js";
 
 yargs(hideBin(process.argv))
@@ -59,7 +65,10 @@ yargs(hideBin(process.argv))
         description: "The id of the note you want to remove",
       });
     },
-    async (argv) => {}
+    async (argv) => {
+      const removedId = await removeNote(argv.id);
+      console.log(removedId);
+    }
   )
   .command(
     "web [port]",
@@ -77,6 +86,9 @@ yargs(hideBin(process.argv))
     "clean",
     "remove all notes",
     () => {},
-    async (argv) => {}
+    async (argv) => {
+      const removedNotes = removeAllNotes();
+      console.log(removedNotes);
+    }
   )
   .parse();

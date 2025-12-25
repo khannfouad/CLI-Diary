@@ -9,17 +9,19 @@
       "content": "my first entry"
     },
     {
-      "id": 1766593011732,
-      "tags": [],
-      "content": "complete data modelling lectures"
-    },
-    {
       "id": 1766593107241,
       "tags": [
         "productive ",
         " money"
       ],
       "content": "complete hld lectures"
+    },
+    {
+      "id": 1766602028148,
+      "tags": [
+        "devops project"
+      ],
+      "content": "learn docker"
     }
   ]
 }
